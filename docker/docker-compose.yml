@@ -1,0 +1,22 @@
+version: "'3.8"
+
+# Port binding = HOST_PORT:CONTAINER_PORT
+
+services:
+
+  application:
+    build: tomcat
+    image: ${APP_NAME}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+  database:
+    build:
+      context: postgresql
+      args:
+        PROJECT_NAME: ${PROJECT_NAME}
+    image: ${PROJECT_NAME}-postgresql
+    ports:
+      - "5432:5432"
