@@ -1,5 +1,7 @@
 # Xplore Service
 
+[![deploy-pipeline](https://github.com/andrewjfei/xplore-service/actions/workflows/deploy-pipeline.yml/badge.svg?branch=main)](https://github.com/andrewjfei/xplore-service/actions/workflows/deploy-pipeline.yml)
+
 A REST API to support the requirements of the Xplore application.
 
 ## Project Prerequisites
