@@ -101,7 +101,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- EasyRandom -->
@@ -161,6 +160,8 @@
 				</configuration>
 				<executions>
 					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
 						<goals>
 							<goal>check</goal>
 						</goals>

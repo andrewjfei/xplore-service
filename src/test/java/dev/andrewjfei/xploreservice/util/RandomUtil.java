@@ -1,5 +1,6 @@
 package dev.andrewjfei.xploreservice.util;
 
+import dev.andrewjfei.xploreservice.transaction.request.LoginRequest;
 import dev.andrewjfei.xploreservice.transaction.request.NewUserRequest;
 import org.jeasy.random.EasyRandom;
 
@@ -9,6 +10,13 @@ public class RandomUtil {
 
     public static <T> T createRandomObject(Class<T> type) {
         return easyRandom.nextObject(type);
+    }
+
+    public static LoginRequest createRandomLoginRequest() {
+        return new LoginRequest(
+                easyRandom.nextObject(String.class),
+                easyRandom.nextObject(String.class)
+        );
     }
 
     public static NewUserRequest createRandomNewUserRequest() {
