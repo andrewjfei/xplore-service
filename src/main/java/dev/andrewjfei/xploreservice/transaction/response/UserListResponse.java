@@ -5,6 +5,7 @@ import java.util.List;
 public record UserListResponse(
         List<UserResponse> userList
 ) {
+
     @Override
     public List<UserResponse> userList() {
         return userList;
