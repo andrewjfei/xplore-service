@@ -1,7 +1,9 @@
 package dev.andrewjfei.xploreservice.util;
 
 import dev.andrewjfei.xploreservice.dao.UserDao;
+import dev.andrewjfei.xploreservice.enumeration.Error;
 import dev.andrewjfei.xploreservice.transaction.request.NewUserRequest;
+import dev.andrewjfei.xploreservice.transaction.response.ErrorResponse;
 import dev.andrewjfei.xploreservice.transaction.response.UserListResponse;
 import dev.andrewjfei.xploreservice.transaction.response.UserResponse;
 import java.util.ArrayList;
@@ -40,5 +42,9 @@ public class ObjectMapper {
         }
 
         return new UserListResponse(userResponseList);
+    }
+
+    public static ErrorResponse toResponse(Error error) {
+        return new ErrorResponse(error.message, error.code);
     }
 }
