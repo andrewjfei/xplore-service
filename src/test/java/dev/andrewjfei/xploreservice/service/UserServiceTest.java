@@ -22,6 +22,7 @@ import static dev.andrewjfei.xploreservice.util.RandomUtil.createRandomObject;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
@@ -106,6 +107,8 @@ public class UserServiceTest {
         UserResponse userResponse = userService.createUser(newUserRequest);
 
         // Then
+        verify(userRepository).save(any(UserDao.class));
+
         assertEquals(userDao.getId(), userResponse.id());
         assertEquals(userDao.getUsername(), userResponse.username());
         assertEquals(userDao.getFirstName(), userResponse.firstName());
